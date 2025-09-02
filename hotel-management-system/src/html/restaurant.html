@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking - Hotel Management System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="logo">Hotel Management System</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="restaurant.html">Restaurant</a>
+                <a href="admin.html">Admin Panel</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <section>
+            <h2>Reserve a Table</h2>
+            <form id="restaurant-form" class="form">
+                <div class="form-row">
+                    <label for="resName">Full name</label>
+                    <input id="resName" name="name" required>
+                </div>
+                <div class="form-row">
+                    <label for="resEmail">Email</label>
+                    <input id="resEmail" name="email" type="email" required>
+                </div>
+                <div class="form-row">
+                    <label for="resPhone">Phone</label>
+                    <input id="resPhone" name="phone" required>
+                </div>
+                <div class="form-row">
+                    <label for="partySize">Party size</label>
+                    <input id="partySize" name="partySize" type="number" min="1" value="2">
+                </div>
+                <div class="form-row">
+                    <label for="resDate">Date</label>
+                    <input id="resDate" name="date" type="date" required>
+                </div>
+                <div class="form-row">
+                    <label for="resTime">Time</label>
+                    <input id="resTime" name="time" type="time" required>
+                </div>
+                <div class="form-row">
+                    <button class="button" type="submit">Reserve Table</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-inner">
+            <p>&copy; 2025 Hotel Management System. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>
