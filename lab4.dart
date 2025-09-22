@@ -4,40 +4,33 @@
 
 // Classes
 // 1.2
-// Define the Book class
 class Book {
   String title;
   String author;
   int numberOfPages;
 
-  // Constructor
   Book(this.title, this.author, this.numberOfPages);
 }
 
 void main() {
-  // Create an instance of Book
   Book myBook = Book("The Great Gatsby", "F. Scott Fitzgerald", 180);
 
-  // Print the properties
   print("Title: ${myBook.title}");
   print("Author: ${myBook.author}");
   print("Number of Pages: ${myBook.numberOfPages}");
 }
 
 //1.3
-// // Define the Student class
 class Student {
   String name;
   int age;
   List<double> grades;
 
-  // Constructor
   Student(this.name, this.age, this.grades);
 
-  // Method to calculate average grade
   double calculateAverageGrade() {
     if (grades.isEmpty) {
-      return 0.0; // Avoid division by zero
+      return 0.0;
     }
     double sum = grades.reduce((a, b) => a + b);
     return sum / grades.length;
@@ -45,26 +38,21 @@ class Student {
 }
 
 void main() {
-  // Create a Student object
   Student student = Student("Alice", 20, [85.5, 90.0, 78.5, 92.0]);
 
-  // Print the average grade
   print("Student: ${student.name}");
   print("Age: ${student.age}");
   print("Average Grade: ${student.calculateAverageGrade()}");
 }
 
 // 1.4
-// // Define the BankAccount class
 class BankAccount {
   String accountNumber;
   String accountHolderName;
   double balance;
 
-  // Constructor
   BankAccount(this.accountNumber, this.accountHolderName, this.balance);
 
-  // Deposit method
   void deposit(double amount) {
     if (amount > 0) {
       balance += amount;
@@ -74,7 +62,6 @@ class BankAccount {
     }
   }
 
-  // Withdraw method
   void withdraw(double amount) {
     if (amount <= 0) {
       print("Withdrawal amount must be greater than zero.");
@@ -88,47 +75,37 @@ class BankAccount {
 }
 
 void main() {
-  // Create a bank account
   BankAccount account = BankAccount("123456789", "Alice Johnson", 500.0);
 
   print("Account Holder: ${account.accountHolderName}");
   print("Account Number: ${account.accountNumber}");
   print("Initial Balance: \$${account.balance.toStringAsFixed(2)}\n");
 
-  // Test deposit
   account.deposit(200.0);
-  account.deposit(-50.0); // Invalid case
+  account.deposit(-50.0);
 
-  // Test withdraw
   account.withdraw(100.0);
-  account.withdraw(700.0); // Insufficient funds case
-  account.withdraw(-20.0); // Invalid case
+  account.withdraw(700.0);
+  account.withdraw(-20.0);
 
-  // Final balance
   print("\nFinal Balance: \$${account.balance.toStringAsFixed(2)}");
 }
 
 // 1.5
-// // Define the Rectangle class
 class Rectangle {
   double width;
   double height;
 
-  // Constructor
   Rectangle(this.width, this.height);
 
-  // Getter for area
   double get area => width * height;
 
-  // Getter for perimeter
   double get perimeter => 2 * (width + height);
 }
 
 void main() {
-  // Create a Rectangle object
   Rectangle rect = Rectangle(10.0, 5.0);
 
-  // Print area and perimeter
   print("Width: ${rect.width}");
   print("Height: ${rect.height}");
   print("Area: ${rect.area}");
@@ -138,7 +115,6 @@ void main() {
 
 // Task 2
 // 2.2
-// // Define the OrderStatus enum
 enum OrderStatus {
   pending,
   processing,
@@ -148,25 +124,20 @@ enum OrderStatus {
 }
 
 void main() {
-  // Create a variable of type OrderStatus
   OrderStatus status = OrderStatus.processing;
 
-  // Print the value
   print("Current order status: $status");
 
-  // Print only the enum name (without "OrderStatus.")
   print("Order status (clean): ${status.name}");
 }
 
 // 2.3
-// // Define the TrafficLight enum
 enum TrafficLight {
   red,
   yellow,
   green,
 }
 
-// Function that returns the recommended action
 String getAction(TrafficLight light) {
   switch (light) {
     case TrafficLight.red:
@@ -179,7 +150,6 @@ String getAction(TrafficLight light) {
 }
 
 void main() {
-  // Test all traffic light colors
   for (var light in TrafficLight.values) {
     print("Light: ${light.name} → Action: ${getAction(light)}");
   }
